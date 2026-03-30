@@ -110,7 +110,16 @@ export default function App() {
     "Phát hiện một 'cao thủ' giấu nghề, vẻ mặt điềm tĩnh đến đáng sợ.",
     "Ánh mắt sắc lẹm như dao cạo, chắc chắn là đã thuộc làu làu bài cũ rồi đúng không?",
     "Gương mặt toát lên vẻ 'thanh niên nghiêm túc' của năm, AI cũng phải ngả mũ thán phục.",
-    "Vẻ mặt 'ngơ ngác' này thực chất là một chiến thuật để đánh lạc hướng AI, nhưng không thành công đâu!"
+    "Vẻ mặt 'ngơ ngác' này thực chất là một chiến thuật để đánh lạc hướng AI, nhưng không thành công đâu!",
+    "Phát hiện một mái tóc rất 'nghệ thuật', có vẻ chủ nhân đang cố gắng dùng tóc để che giấu sự lo lắng.",
+    "Dù bạn có lấy tay che mặt thì AI vẫn nhận diện được 'khí chất' ngời ngời không thể trộn lẫn.",
+    "Hệ thống đã quét qua lớp 'phòng thủ' bằng tay, phát hiện một học sinh đang rất sẵn sàng lên bảng.",
+    "Mái tóc này toát lên vẻ thông thái, chắc chắn là một 'kho tàng' kiến thức đang ẩn mình.",
+    "Che mặt cũng không thoát được đâu, AI đã khóa mục tiêu dựa trên 'tần số' của sự thông minh rồi!",
+    "Phát hiện một kiểu tóc 'độc lạ Bình Dương', chắc chắn là điểm nhấn của cả lớp hôm nay.",
+    "Dù chỉ nhìn thấy một phần gương mặt, AI vẫn đoán được bạn là người sẽ 'làm nên chuyện' trên bảng.",
+    "Hệ thống nhận diện được sự 'bí ẩn' đằng sau đôi bàn tay đang che mặt kia, mời bạn lộ diện!",
+    "Mái tóc bồng bềnh này chính là dấu hiệu của một thiên tài đang chờ được tỏa sáng."
   ];
 
   const CHEERS = [
@@ -219,7 +228,7 @@ export default function App() {
       if (videoRef.current && isModelsLoaded && isCameraReady && videoRef.current.readyState === 4) {
         const results = await faceapi.detectAllFaces(
           videoRef.current,
-          new faceapi.SsdMobilenetv1Options({ minConfidence: 0.3 })
+          new faceapi.SsdMobilenetv1Options({ minConfidence: 0.2 })
         );
         
         setDetections(results);
@@ -618,7 +627,7 @@ export default function App() {
                     <div className="space-y-3">
                       <div className="flex items-center gap-2">
                         <div className="w-1 h-3 bg-orange-500" />
-                        <label className="text-[10px] font-mono uppercase text-white/40 tracking-widest">Phân tích đặc điểm</label>
+                        <label className="text-[10px] font-mono uppercase text-white/40 tracking-widest">Phân tích đặc điểm & Nhận diện tóc</label>
                       </div>
                       <div className="bg-white/5 border border-white/10 p-4 rounded-xl text-sm leading-relaxed italic text-orange-100/90 font-medium">
                         {randomMessage ? (
