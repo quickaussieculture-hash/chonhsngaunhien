@@ -1,0 +1,7 @@
+{
+  "name": "Hệ thống chọn học sinh ngẫu nhiên (do thầy Ksor Gé phát triển)",
+  "description": "Hệ thống nhận diện & chọn học sinh ngẫu nhiên (thầy Ksor Gé phát triển)",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
