@@ -142,7 +142,7 @@ export default function App() {
       try {
         const MODEL_URL = 'https://raw.githubusercontent.com/vladmandic/face-api/master/model/';
         await Promise.all([
-          faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
+          faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL),
         ]);
         setIsModelsLoaded(true);
       } catch (err) {
@@ -219,7 +219,7 @@ export default function App() {
       if (videoRef.current && isModelsLoaded && isCameraReady && videoRef.current.readyState === 4) {
         const results = await faceapi.detectAllFaces(
           videoRef.current,
-          new faceapi.TinyFaceDetectorOptions({ inputSize: 608, scoreThreshold: 0.25 })
+          new faceapi.SsdMobilenetv1Options({ minConfidence: 0.3 })
         );
         
         setDetections(results);
